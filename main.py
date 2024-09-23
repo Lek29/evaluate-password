@@ -25,16 +25,6 @@ def has_symbols(password):
     return any([not sign.isalnum() for sign in password])
 
 
-check_function = [
-    has_digit,
-    has_letters,
-    has_upper_letters,
-    has_lower_letters,
-    is_very_long,
-    has_symbols,
-]
-
-
 def calculate_rating(password):
     score = 0
     for func in check_function:
@@ -46,6 +36,16 @@ def calculate_rating(password):
 def on_password_change(edit, new_edit_text):
     rating = calculate_rating(new_edit_text)
     reply.set_text(f'{rating}')
+
+
+check_function = [
+    has_digit,
+    has_letters,
+    has_upper_letters,
+    has_lower_letters,
+    is_very_long,
+    has_symbols,
+]
 
 
 def main():
