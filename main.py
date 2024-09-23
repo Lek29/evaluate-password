@@ -50,7 +50,7 @@ def on_password_change(edit, new_edit_text):
 
 def main():
     global reply
-    input_password = urwid.Edit('Введите пароль:')
+    input_password = urwid.Edit('Введите пароль:', mask='*')
     reply = urwid.Text('Рейтинг пароля: 0')
     menu = urwid.Pile([input_password, reply])
     menu = urwid.Filler(menu, valign='middle')
