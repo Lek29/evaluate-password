@@ -22,7 +22,7 @@ def has_lower_letters(password):
 
 
 def has_symbols(password):
-    return any([not sign.isalnum for sign in password])
+    return any([not sign.isalnum() for sign in password])
 
 
 check_function = [
