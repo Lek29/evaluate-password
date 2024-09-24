@@ -38,16 +38,6 @@ def on_password_change(edit, new_edit_text):
     reply.set_text(f'{rating}')
 
 
-check_function = [
-    has_digit,
-    has_letters,
-    has_upper_letters,
-    has_lower_letters,
-    is_very_long,
-    has_symbols,
-]
-
-
 def main():
     global reply
     input_password = urwid.Edit('Введите пароль:', mask='*')
@@ -57,6 +47,16 @@ def main():
 
     urwid.connect_signal(input_password, 'change', on_password_change)
     urwid.MainLoop(menu).run()
+
+
+check_function = [
+    has_digit,
+    has_letters,
+    has_upper_letters,
+    has_lower_letters,
+    is_very_long,
+    has_symbols,
+]
 
 
 if __name__ == '__main__':
