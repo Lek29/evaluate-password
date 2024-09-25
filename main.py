@@ -27,6 +27,14 @@ def has_symbols(password):
 
 def calculate_rating(password):
     score = 0
+    check_function = [
+        has_digit,
+        has_letters,
+        has_upper_letters,
+        has_lower_letters,
+        is_very_long,
+        has_symbols,
+    ]
     for func in check_function:
         if func(password):
             score += 2
@@ -47,16 +55,6 @@ def main():
 
     urwid.connect_signal(input_password, 'change', on_password_change)
     urwid.MainLoop(menu).run()
-
-
-check_function = [
-    has_digit,
-    has_letters,
-    has_upper_letters,
-    has_lower_letters,
-    is_very_long,
-    has_symbols,
-]
 
 
 if __name__ == '__main__':
